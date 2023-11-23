@@ -1,0 +1,32 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "search_placeholder",
+      "value": "#99182431"
+    },
+    {
+      "name": "page_title",
+      "value": "#FF000000"
+    },
+    {
+      "name": "list_item_summary",
+      "value": "#99182431"
+    },
+    {
+      "name": "list_item_title",
+      "value": "#FF182431"
+    },
+    {
+      "name": "theme_background",
+      "value": "#ac0606"
+    },
+    {
+      "name": "list_divider",
+      "value": "#0D000000"
+    }
+  ]
+}

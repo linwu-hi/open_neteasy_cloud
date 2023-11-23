@@ -1,0 +1,36 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "该模板实现了类别列表的功能"
+    },
+    {
+      "name": "ability_desc",
+      "value": "该Ability加载显示主Page的内容"
+    },
+    {
+      "name": "ability_label",
+      "value": "Category List Ability"
+    },
+    {
+      "name": "list_item_title",
+      "value": "Single list"
+    },
+    {
+      "name": "list_item_summary",
+      "value": "右侧文本"
+    },
+    {
+      "name": "page_title",
+      "value": "标题"
+    },
+    {
+      "name": "sub_title",
+      "value": "子标题"
+    },
+    {
+      "name": "detail_default_title",
+      "value": "默认标题"
+    }
+  ]
+}
