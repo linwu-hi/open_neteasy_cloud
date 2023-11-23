@@ -5,7 +5,7 @@
 
 - [api来源](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
-- [源码地址](https://github.com/Ignorance-of-Dong/optimization_open_neteasy_cloud)
+- [源码地址](https://github.com/linwu-hi/open_neteasy_cloud)
 
 
 
@@ -27,8 +27,8 @@
 
 ### 部分功能效果图
 
-![]('/docs/20231123164849.jpg')
-![]('/docs/20231123164921.jpg')
+![](https://github.com/linwu-hi/release-dev-offline/blob/main/docs/20231123164849.jpg)
+![](https://github.com/linwu-hi/release-dev-offline/blob/main/docs/20231123164921.jpg)
 
 
 
