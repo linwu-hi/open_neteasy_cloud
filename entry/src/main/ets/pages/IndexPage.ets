@@ -11,7 +11,7 @@ struct IndexPage {
   private titleParam: Resource = $r('app.string.detail_default_title');
   private controller: TabsController = new TabsController()
   private swiperController: SwiperController = new SwiperController()
-  @State currentIndex: number = 2
+  @State currentIndex: number = 0
 
   aboutToAppear() {
     if (router.getParams()) {
@@ -26,6 +26,153 @@ struct IndexPage {
       .fontWeight(this.currentIndex===index?800:400)
   }
 
+  @Builder TabMyContent(){
+    Scroll(){
+      Column(){
+        Flex({ direction: FlexDirection.Row,justifyContent:FlexAlign.SpaceAround,alignItems:ItemAlign.Center }){
+          Column(){
+            Image($r('app.media.my_nav_icon1'))
+              .width(38)
+              .height(38)
+              .margin({bottom:9})
+            Text('私人FM').fontSize(12).fontColor('#000')
+          }
+          Column(){
+            Image($r('app.media.my_nav_icon1'))
+              .width(38)
+              .height(38)
+              .margin({bottom:9})
+            Text('心动模式').fontSize(12).fontColor('#000')
+          }
+          Column(){
+            Image($r('app.media.my_nav_icon1'))
+              .width(38)
+              .height(38)
+              .margin({bottom:9})
+            Text('私人电台').fontSize(12).fontColor('#000')
+          }
+          Column(){
+            Image($r('app.media.my_nav_icon1'))
+              .width(38)
+              .height(38)
+              .margin({bottom:9})
+            Text('跑步FM').fontSize(12).fontColor('#000')
+          }
+          Column(){
+            Image($r('app.media.my_nav_icon1'))
+              .width(38)
+              .height(38)
+              .margin({bottom:9})
+            Text('心动模式').fontSize(12).fontColor('#000')
+          }
+        }
+        .height(86)
+        Column(){
+          Row(){
+            Image($r('app.media.music_icon'))
+              .width(21)
+              .height(25)
+            Text('本地音乐')
+              .fontSize(16)
+              .fontColor('#000')
+              .margin({left:8})
+          }
+          .width('100%')
+          .height(47)
+          .alignItems(VerticalAlign.Center)
+          .border({width:{bottom:1},color:'#dcdcdc',})
+          .padding({left:13})
+          Row(){
+            Image($r('app.media.music_icon'))
+              .width(21)
+              .height(25)
+            Text('最近播放')
+              .fontSize(16)
+              .fontColor('#000')
+              .margin({left:8})
+          }
+          .width('100%')
+          .height(47)
+          .alignItems(VerticalAlign.Center)
+          .border({width:{bottom:1},color:'#dcdcdc',})
+          .padding({left:13})
+          Row(){
+            Image($r('app.media.music_icon'))
+              .width(21)
+              .height(25)
+            Text('下载管理')
+              .fontSize(16)
+              .fontColor('#000')
+              .margin({left:8})
+          }
+          .width('100%')
+          .height(47)
+          .alignItems(VerticalAlign.Center)
+          .border({width:{bottom:1},color:'#dcdcdc',})
+          .padding({left:13})
+          Row(){
+            Image($r('app.media.music_icon'))
+              .width(21)
+              .height(25)
+            Text('我的电台')
+              .fontSize(16)
+              .fontColor('#000')
+              .margin({left:8})
+          }
+          .width('100%')
+          .height(47)
+          .alignItems(VerticalAlign.Center)
+          .border({width:{bottom:1},color:'#dcdcdc',})
+          .padding({left:13})
+          Row(){
+            Image($r('app.media.music_icon'))
+              .width(21)
+              .height(25)
+            Text('我的收藏')
+              .fontSize(16)
+              .fontColor('#000')
+              .margin({left:8})
+          }
+          .width('100%')
+          .height(47)
+          .alignItems(VerticalAlign.Center)
+          .border({width:{bottom:1},color:'#dcdcdc',})
+          .padding({left:13})
+        }
+        Divider()
+        .strokeWidth(9)
+        .color('#dcdcdc')
+        Column(){
+          Text('创建的歌单')
+            .fontSize(16)
+            .fontColor('#000')
+            .fontWeight(800)
+            .margin({bottom:4})
+          Row(){
+            Image('http://p1.music.126.net/mENtBPo_dYhMgsv0_3ae9A==/109951165448009459.jpg')
+              .width(56)
+              .height(56)
+              .margin({right:12})
+            Column(){
+              Text('linwu-hi喜欢的音乐')
+                .fontSize(14)
+                .fontColor('#000')
+              Text('14首')
+                .fontSize(12)
+                .fontColor('#666')
+                .margin({top:4})
+            }
+            .alignItems(HorizontalAlign.Start)
+          }
+        }
+        .width('100%')
+        .padding({left:13,top:6})
+        .alignItems(HorizontalAlign.Start)
+        .justifyContent(FlexAlign.Start)
+      }
+    }
+  }
+
   build() {
     Column() {
         Image($r("app.media.menu"))
@@ -37,14 +184,20 @@ struct IndexPage {
         })
         Tabs({index:this.currentIndex,controller: this.controller }) {
           TabContent() {
+             this.TabMyContent()
+          }
+          .tabBar(this.TabTextBuilder('我的',0))
+          .align(Alignment.TopStart)
+
+          TabContent() {
             Text('首页的内容')
           }
-          .tabBar(this.TabTextBuilder('首页',0))
+          .tabBar(this.TabTextBuilder('首页',1))
 
           TabContent() {
             Text('推荐的内容').fontSize(35).fontColor('#888')
           }
-          .tabBar(this.TabTextBuilder('推荐',1))
+          .tabBar(this.TabTextBuilder('推荐',2))
 
           TabContent() {
             Scroll(){
@@ -68,28 +221,28 @@ struct IndexPage {
                   Column(){
                     Image($r('app.media.nav_icon1'))
                       .width(43)
-                      .width(43)
+                      .height(43)
                       .margin({bottom:9})
                     Text('每日推荐').fontSize(12).fontColor('#000')
                   }
                   Column(){
                     Image($r('app.media.nav_icon1'))
                       .width(43)
-                      .width(43)
+                      .height(43)
                       .margin({bottom:9})
                     Text('歌单').fontSize(12).fontColor('#000')
                   }
                   Column(){
                     Image($r('app.media.nav_icon1'))
                       .width(43)
-                      .width(43)
+                      .height(43)
                       .margin({bottom:9})
                     Text('排行榜').fontSize(12).fontColor('#000')
                   }
                   Column(){
                     Image($r('app.media.nav_icon1'))
                       .width(43)
-                      .width(43)
+                      .height(43)
                       .margin({bottom:9})
                     Text('电台').fontSize(12).fontColor('#000')
                   }
@@ -266,12 +419,7 @@ struct IndexPage {
             }
           }
           .height('100%')
-          .tabBar(this.TabTextBuilder('发现',2))
-
-          TabContent() {
-            Text('我的内容').fontSize(35).fontColor('#888')
-          }
-          .tabBar(this.TabTextBuilder('我的',3))
+          .tabBar(this.TabTextBuilder('发现',3))
         }
         .onChange((index:number)=>{
           this.currentIndex=index

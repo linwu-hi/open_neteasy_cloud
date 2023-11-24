@@ -11,6 +11,18 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",
+    "reqPermissions":[
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "access internet",
+        "usedScene": {
+//          "abilities": [
+//            "com.mycamera.MainAbility"
+//          ],
+          "when": "always"
+        }
+      }
+    ],
     "abilities": [
       {
         "name": "TestAbility",
