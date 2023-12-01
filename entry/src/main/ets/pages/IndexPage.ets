@@ -192,7 +192,7 @@ struct IndexPage {
           TabContent() {
             Text('首页的内容')
           }
-          .tabBar(this.TabTextBuilder('首页',1))
+          .tabBar(this.TabTextBuilder('云村',1))
 
           TabContent() {
             Text('推荐的内容').fontSize(35).fontColor('#888')
